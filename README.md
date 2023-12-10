@@ -1,4 +1,4 @@
-### Project Part 3 Documentation
+# Project Part 3 Documentation
 
 ## Introduction:
 
@@ -66,34 +66,34 @@ I have opted to trade crypto currencies due to the fact that they may be traded 
 
 This Python code employs Alpaca's API to create a trading bot that uses a linear regression model to predict cryptocurrency prices and execute trades accordingly. Below is a breakdown of the key sections and functionalities within the code:
 
-# Importing Necessary Libraries:
+### Importing Necessary Libraries:
 - The code begins by importing required libraries such as `alpaca_trade_api`, `os`, `time`, `pandas`, and `sklearn.linear_model`.
 
-# API Configuration and Initialization:
+### API Configuration and Initialization:
 - It sets up the Alpaca API credentials (`API_KEY` and `API_SECRET`) stored in a separate `env.py` file and initializes the API connection using these keys.
 
-# Define Target Asset and Parameters:
+### Define Target Asset and Parameters:
 - Defines the target cryptocurrency symbol (`symbol`), timeframe for data (`timeframe`), and sets a budget (`budget`) for trading.
 
-# Machine Learning Data Preparation:
+### Machine Learning Data Preparation:
 - Initiates a loop (`while True`) to continuously fetch data and perform trading operations.
 - Fetches historical cryptocurrency data (`crypto_data`) using the Alpaca API for the specified symbol and timeframe.
 - Prepares a machine learning dataset (`ml_df`) by processing the fetched data, dropping unnecessary columns, and creating a column for the next price (`next_output`) to predict.
 
-# Training the Machine Learning Model:
+### Training the Machine Learning Model:
 - Splits the data into training and testing sets (`train_data` and `test_data`) for model training.
 - Defines features (`X_train`) and the target variable (`y_train`) for the linear regression model.
 - Creates and fits a Linear Regression model using the training data.
 
-# Model Prediction and Trading Decisions:
+### Model Prediction and Trading Decisions:
 - Predicts the next price based on the model and the most recent cryptocurrency data.
 - Determines whether to buy, sell, or hold based on predicted price changes compared to the current price.
 - Executes buy or sell orders via the Alpaca API depending on predicted price trends and the current state of the portfolio.
 
-# Saving Data:
+### Saving Data:
 - Saves the fetched cryptocurrency data to a .csv file within a specified directory (project3/data).
 
-# Continual Execution and Delay:
+### Continual Execution and Delay:
 - The code continuously loops and repeats the process of fetching data, training the model, making predictions, and executing trades.
 - Includes a delay of 60 seconds (`time.sleep(60)`) between each iteration to prevent overwhelming API requests and allowing new market data to become available
 

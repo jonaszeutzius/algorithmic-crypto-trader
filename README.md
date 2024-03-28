@@ -1,4 +1,4 @@
-# Project Part 3 Documentation
+# Documentation
 
 ## Introduction:
 
